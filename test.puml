@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+actor Empleado as E
+(Alta cliente)
+(Introducir pedido)
+(Obtener estado pedido)
+(Buscar pedido)
+(Cancdelar pedido)
+
+(Buscar cliente)
+(Pago con tarjeta)
+(Pago en cuenta)
+
+E -- (Alta cliente)
+E -- (Introducir pedido)
+E -- (Obtener estado pedido)
+E -- (Buscar pedido)
+E -- (Cancdelar pedido)
+(Obtener estado pedido) ..> (Buscar pedido)
+(Cancdelar pedido) ..> (Buscar pedido)
+(Alta cliente) ..> (Introducir pedido) :<<Extiende>>
+(Introducir pedido) ..> (Buscar cliente) : <<Incluye>>
+(Introducir pedido) <.. (Pago con tarjeta) :<<Extiende>>
+(Introducir pedido) <.. (Pago en cuenta) :<<Extiende>>
+
+@enduml
